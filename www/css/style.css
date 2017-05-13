@@ -1,0 +1,168 @@
+/* Empty. Add your own CSS if you like */
+
+/* Empty. Add your own CSS if you like */
+.slider{
+  height: 40%;
+  text-align: center;
+  padding-top: 40px;
+
+}
+
+.scroll{
+  height: 100%;
+}
+
+
+
+.orange{
+  color: #f0632e;
+}
+
+
+.color-red{
+  background: url(../img/2028980.jpg) no-repeat center center fixed;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.custom_color{
+  font-size: 64px;
+   color : #4d4d4a;
+ }
+
+.color-yellow{
+  background-image: url("http://del.h-cdn.co/assets/15/24/1600x800/gallery-1434133241-milkshakes.jpg");
+  background-size: cover;
+  width: 100%;
+  max-width: 100%;
+  height: 100%;
+}
+
+.custom_tab_color{
+  background-color: black;
+}
+
+.tab-item.tab-item-active, .tab-item.active, .tab-item.activated {
+    color: #f0632e;
+}
+
+.tabs-negetive > .tabs{
+background-color: black !important;
+}
+
+
+
+ion-tabs .tab-item {
+  color: #a7a7a7;
+
+}
+
+.KavintageHeaderFonts {
+}
+
+
+
+/*ion-item {
+  width: 50%;
+  float: left;
+  height: 200px;
+}*/
+
+.card_menu_text{
+  font-size: 14px;
+font-family: 'Rubik', sans-serif;
+color: black;
+/*text-align: center;*/
+background-color: #f0f0f0 !important;
+}
+
+.item_details{
+  color: #61605f;
+  font-size: 13px;
+
+}
+
+
+
+.custom_image{
+  width: 100%;
+  height: 100%;
+}
+
+/*ion-content {
+  background-image: url('http://media.tumblr.com/05551e707b4b2145352febbdc7dee99f/tumblr_inline_mr6k63GXwD1qz4rgp.jpg');
+}*/
+
+.list_border
+{
+  top: 5px;
+  font-size:12px !important;
+color: rgb(119,119,119);
+}
+
+.title{
+  font-size:12px !important;
+  font-family: 'Maven Pro', sans-serif;
+}
+
+.black{
+  background-color: black;
+  color: #f57849;
+  font-size:18px !important;
+  font-family: 'Great Vibes';
+  src: url(..fonts/GreatVibes-Regular.ttf) format("truetype");
+}
+
+.list_border_mainmenu
+{
+  top: 5px;
+}
+
+.custom_font {
+    font-family: 'Maven Pro', sans-serif;
+    font-size:14px !important;
+    color: #4d4d4a;
+}
+
+.main_side_list_text{
+  font-size:18px !important;
+}
+
+.sider{
+  align="left";
+}
+
+.iconAllignCenter{
+align-items: center;
+}
+
+.dark .item {
+  background-color: #3f4041;
+  border: none;
+  border-top: 1px solid #464646;
+  border-bottom: 2px solid #333333;
+  padding: 20px;
+  max-height: none;
+}
+
+
+
+.ListAnimation{
+  -webkit-animation: fadeInRignt 1s;
+    animation: fadeInRight 1s;
+}
+
+
+/*--------------------------Animations--------------------------*/
+
+.spin {
+    animation-name: spin;
+    animation-duration: 400ms;
+    animation-iteration-count: 10;
+    animation-timing-function: linear;
+}
+@keyframes spin {
+  from  { transform:translateX(0); }
+  to    { transform: translateX(-50%); }
+}
