@@ -141,19 +141,35 @@ var example = angular.module('starter', ['ionic', 'starter.controllers'])
     };
   });
 
+var count=0;
 example.controller("ExampleController", function($scope, $ionicSlideBoxDelegate) {
   $scope.navSlide = function(index) {
     $ionicSlideBoxDelegate.slide(index, 500);
   };
 
-  $scope.animateVisuals = function() {
-    var buttons = document.getElementById('thickShakes-list-item13');
-    move(buttons)
-      .ease('in-out')
-      .x(-200)
-      .duration('0.5s')
-      .end();
+  $scope.animateVisualsRight = function(index) {
+    var buttons = document.getElementById('thickShakes-list-item' + index);
+    if (count%2==0) {
+      move(buttons)
+        .add('margin-left', 200)
+        .duration('0.5s')
+        .end();
+    } else {
+      move(buttons)
+        .sub('margin-left', 200)
+        .duration('0.5s')
+        .end();
+    }
+    count++;
   };
+
+  // $scope.animateVisualsLeft = function() {
+  //   var buttons = document.getElementById('thickShakes-list-item'+index);
+  //   move(buttons)
+  //     .x(200)
+  //     .duration('0.5s')
+  //     .end();
+  // };
 });
 
 example.config(function($ionicConfigProvider) {

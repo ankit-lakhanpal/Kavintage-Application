@@ -146,6 +146,10 @@ align-items: center;
   max-height: none;
 }
 
+#thickShakes-list-item13{
+  min-width: auto;
+}
+
 
 
 .ListAnimation{
