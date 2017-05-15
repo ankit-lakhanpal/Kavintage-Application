@@ -159,8 +159,7 @@ align-items: center;
 .spin {
     animation-name: spin;
     animation-duration: 400ms;
-    animation-iteration-count: 10;
-    animation-timing-function: linear;
+    animation-iteration-count: 1;
 }
 @keyframes spin {
   from  { transform:translateX(0); }
