@@ -141,35 +141,52 @@ var example = angular.module('starter', ['ionic', 'starter.controllers'])
     };
   });
 
-var count=0;
+var count = 0;
+var indexCheck = 999;
+
 example.controller("ExampleController", function($scope, $ionicSlideBoxDelegate) {
+
+
   $scope.navSlide = function(index) {
     $ionicSlideBoxDelegate.slide(index, 500);
   };
 
-  $scope.animateVisualsRight = function(index) {
+  $scope.moveCard = function(index) {
+    var movePosition = 200;
+    var moveSpeed = 0.3;
     var buttons = document.getElementById('thickShakes-list-item' + index);
-    if (count%2==0) {
-      move(buttons)
-        .add('margin-left', 200)
-        .duration('0.5s')
-        .end();
-    } else {
-      move(buttons)
-        .sub('margin-left', 200)
-        .duration('0.5s')
+
+    if (index - indexCheck != 0 && count != 0) {
+      count = 0;
+      var buttona = document.getElementById('thickShakes-list-item' + indexCheck);
+
+      move(buttona)
+        .sub('margin-right', movePosition)
+        .sub('margin-left', -movePosition)
+        .duration('0.2s')
         .end();
     }
+
+    if (count % 2 == 0) {
+      move(buttons)
+        .add('margin-right', movePosition)
+        .add('margin-left', -movePosition)
+        .duration('0.2s')
+        .end();
+
+
+    } else {
+      move(buttons)
+        .sub('margin-right', movePosition)
+        .sub('margin-left', -movePosition)
+        .duration('0.2s')
+        .end();
+
+    }
+
+    indexCheck = index;
     count++;
   };
-
-  // $scope.animateVisualsLeft = function() {
-  //   var buttons = document.getElementById('thickShakes-list-item'+index);
-  //   move(buttons)
-  //     .x(200)
-  //     .duration('0.5s')
-  //     .end();
-  // };
 });
 
 example.config(function($ionicConfigProvider) {
