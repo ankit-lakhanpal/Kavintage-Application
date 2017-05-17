@@ -43,6 +43,11 @@
   background-color: black;
 }
 
+.BlackBackground{
+  background-color: black;
+  height: 800px;
+}
+
 .tab-item.tab-item-active, .tab-item.active, .tab-item.activated {
     color: #f0632e;
 }
@@ -168,4 +173,29 @@ align-items: center;
 @keyframes spin {
   from  { transform:translateX(0); }
   to    { transform: translateX(-50%); }
+}
+
+.list_border_mainmenu.card_menu_text{
+  width: calc(100% + 200px);
+}
+
+.icon.ion-android-cart{
+  padding-right: 200px
+}
+
+.icon.ion-android-cart.new{
+  padding-right: 100px;
+
+}
+
+.Images{
+  height: 80px;
+  float: right;
+   top: 0px;
+   left: 0px;
+   max-width: 80px;
+   max-height: 80px;
+   width: 100%;
+   height: 100%;
+   padding-right: 0px;
 }

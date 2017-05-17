@@ -156,31 +156,36 @@ example.controller("ExampleController", function($scope, $ionicSlideBoxDelegate)
     var moveSpeed = 0.3;
     var buttons = document.getElementById('thickShakes-list-item' + index);
 
-    if (index - indexCheck != 0 && count != 0) {
+    if (index - indexCheck != 0 && count != 0 && count % 2 != 0) {
       count = 0;
       var buttona = document.getElementById('thickShakes-list-item' + indexCheck);
 
       move(buttona)
         .sub('margin-right', movePosition)
         .sub('margin-left', -movePosition)
-        .duration('0.2s')
+        .duration('0.1s')
         .end();
+
+        console.log("[Correction loop]Count is: "+count+", Index used is "+index+",Previous index is "+indexCheck);
     }
 
     if (count % 2 == 0) {
       move(buttons)
         .add('margin-right', movePosition)
         .add('margin-left', -movePosition)
-        .duration('0.2s')
+        .duration('0.1s')
         .end();
+
+        console.log("[Even]Count is: "+count+", Index used is "+index+",Previous index is "+indexCheck);
 
 
     } else {
       move(buttons)
         .sub('margin-right', movePosition)
         .sub('margin-left', -movePosition)
-        .duration('0.2s')
+        .duration('0.1s')
         .end();
+        console.log("[Even]Count is: "+count+", Index used is "+index+",Previous index is "+indexCheck);
 
     }
 

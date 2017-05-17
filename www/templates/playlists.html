@@ -1,6 +1,7 @@
 <ion-pane ng-controller="ExampleController">
   <ion-tabs class="tabs-negetive tabs-icon-top tabs-color-active-custom">
     <ion-tab class="" title="Thick Shakes " icon-on="ion-beer" icon-off="ion-beer">
+      <!-- <div class="BlackBackground"></div> -->
       <ion-content>
         <ion-slide-box pager-click="navSlide(index)">
           <ion-slide>
@@ -10,20 +11,29 @@
             <div class="color-yellow"></div>
           </ion-slide>
         </ion-slide-box>
+
+
+
+
         <ion-list id="thickShakes-list5" class="manual-list-fullwidth">
           <label class="item item-input" id="thickShakes-search1" name="Search">
-        <i class="icon ion-search placeholder-icon"></i>
-        <input type="search" placeholder="Enter your item">
-      </label>
-          <!-- slideOutLeft  -->
-
+            <i class="icon ion-search placeholder-icon"></i>
+            <input type="search" placeholder="Enter your item">
+          </label>
           <ion-item class="list_border_mainmenu card_menu_text item-thumbnail-left item-icon-right assertive" id="thickShakes-list-item1">
             <img src="img/SeFUA2SVeFxzc1J4lSAd_17918919_1022150551250014_1097248892_n.png">
-            <h2assertive><br>KitKat Milkshake
-              <i ng-click="moveCard(1)"  class="icon ion-android-cart"></i>
+              <h2assertive><br>KitKat Milkshake
+              <i ng-click="moveCard(1)" class="icon ion-android-cart"></i>
+              <!-- <i ng-click="moveCard(1)" class="icon ion-android-cart new"></i> -->
+              <!-- <img class="Images" src="img/SeFUA2SVeFxzc1J4lSAd_17918919_1022150551250014_1097248892_n.png"> -->
+
             </h2assertive>
           </ion-item>
         </ion-list>
+
+
+
+
         <ion-item class="list_border_mainmenu card_menu_text item-thumbnail-left item-icon-right assertive" id="thickShakes-list-item2">
           <img src="img/YV0asZCURx6wgvPzdXvP_53860_977.jpg">
           <h2assertive><br>Oreo Milkshake
@@ -81,11 +91,6 @@
             </h2assertive>
           </ion-item>
 
-
-
-          <!-- <ion-item ng-repeat="item in [1,2,3,4,5,6,7,8,9]" class="custom-item">
-      Item {{item}}
-      </ion-item> -->
         </ion-list>
       </ion-content>
     </ion-tab>
