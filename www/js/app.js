@@ -152,7 +152,7 @@ example.controller("ExampleController", function($scope, $ionicSlideBoxDelegate)
   };
 
   $scope.moveCard = function(index) {
-    var movePosition = 200;
+    var movePosition = 400;
     var moveSpeed = 0.3;
     var buttons = document.getElementById('thickShakes-list-item' + index);
 
