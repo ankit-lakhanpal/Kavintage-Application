@@ -210,3 +210,6 @@ example.controller('MainCtrl', function($scope, $ionicSideMenuDelegate) {
 example.controller('AppCtrler', function($scope) {
 
 });
+
+example.module('ionicApp', ['ionic', 'ionic.contrib.drawer']).controller('appCtrl', function($scope) {
+});
