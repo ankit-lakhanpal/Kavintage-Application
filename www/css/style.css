@@ -180,29 +180,12 @@ align-items: center;
   padding-bottom: 0px;
 }
 
-/*.mls{
-  background-color: rgb(224, 224, 224);
-  width: 70px;
-  height: 80px;
-  float: right;
-  margin-right: 2px;
-  display: inline-block;
+.MilkBottle{
+  /*display: block;*/
+  margin-top: 15px;
+  margin-bottom: 15px;
+  height: 70px;
 }
-
-.differentSizeText{
-  text-align: center;
-}
-
-.mlIcons{
-  display: inline-block;
-  width: 35px;
-  text-align: center;
-}
-
-#addIcon{
-  font-size: 30px;
-
-}*/
 
 .cardSlide{
   display: inline-block;
@@ -210,8 +193,10 @@ align-items: center;
   background-color: rgb(235, 235, 235);
   width: calc(50vw - 2px);
   height: 100px;
-  position: inherit;
+  position: relative;
   margin-top: -8px;
+  padding: -2px;
+  border: 1px groove black;
 }
 
 h2assertive{
