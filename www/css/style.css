@@ -140,9 +140,11 @@ align-items: center;
   border: none;
   border-top: 1px solid #464646;
   border-bottom: 2px solid #333333;
-  padding: 20px;
+  /*padding: 20px;*/
   max-height: none;
 }
+
+
 
 
 
@@ -166,11 +168,12 @@ align-items: center;
 }
 
 .list_border_mainmenu.card_menu_text{
-  width: calc(100% + 400px);
+  /*width: calc(100% + 400px);*/
+  width: 200%;
 }
 
 .icon.ion-android-cart{
-  margin-right: 400px
+  margin-right: 50%;
 }
 
 .list_border_mainmenu{
@@ -204,9 +207,15 @@ align-items: center;
 .cardSlide{
   display: inline-block;
   float: right;
-  background-color: black;
-  width: 205px;
-  height: 20px;
+  background-color: rgb(235, 235, 235);
+  width: calc(50vw - 2px);
+  height: 100px;
+  position: inherit;
+  margin-top: -8px;
+}
+
+h2assertive{
+  display: inline-block;
 }
 
 .list_border_mainmenu{

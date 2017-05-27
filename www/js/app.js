@@ -4,8 +4,12 @@
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 // 'starter.controllers' is found in controllers.js
-var example = angular.module('starter', ['ionic', 'starter.controllers'])
+var width = window.innerWidth;
+console.log("[INFO]: Screen size:" + width);
 
+// document.getElementById("thickShakes-list-item2").style.width = width;
+
+var example = angular.module('starter', ['ionic', 'starter.controllers'])
   .run(function($ionicPlatform) {
     $ionicPlatform.ready(function() {
       // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
@@ -152,7 +156,7 @@ example.controller("ExampleController", function($scope, $ionicSlideBoxDelegate)
   };
 
   $scope.moveCard = function(index) {
-    var movePosition = 400;
+    var movePosition = width;
     var moveSpeed = 0.3;
     var buttons = document.getElementById('thickShakes-list-item' + index);
 
@@ -203,13 +207,4 @@ example.controller('MainCtrl', function($scope, $ionicSideMenuDelegate) {
     $ionicSideMenuDelegate.toggleLeft();
 
   }
-});
-
-// var animation=angular.module('app', ['ng-fx', 'angular-animate']);
-
-example.controller('AppCtrler', function($scope) {
-
-});
-
-example.module('ionicApp', ['ionic', 'ionic.contrib.drawer']).controller('appCtrl', function($scope) {
 });
