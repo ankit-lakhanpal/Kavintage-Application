@@ -170,7 +170,7 @@ example.controller("ExampleController", function($scope, $ionicSlideBoxDelegate)
         .duration('0.1s')
         .end();
 
-        console.log("[Correction loop]Count is: "+count+", Index used is "+index+",Previous index is "+indexCheck);
+      console.log("[Correction loop]Count is: " + count + ", Index used is " + index + ",Previous index is " + indexCheck);
     }
 
     if (count % 2 == 0) {
@@ -180,7 +180,7 @@ example.controller("ExampleController", function($scope, $ionicSlideBoxDelegate)
         .duration('0.1s')
         .end();
 
-        console.log("[Even]Count is: "+count+", Index used is "+index+",Previous index is "+indexCheck);
+      console.log("[Even]Count is: " + count + ", Index used is " + index + ",Previous index is " + indexCheck);
 
 
     } else {
@@ -189,7 +189,7 @@ example.controller("ExampleController", function($scope, $ionicSlideBoxDelegate)
         .sub('margin-left', -movePosition)
         .duration('0.1s')
         .end();
-        console.log("[Even]Count is: "+count+", Index used is "+index+",Previous index is "+indexCheck);
+      console.log("[Even]Count is: " + count + ", Index used is " + index + ",Previous index is " + indexCheck);
 
     }
 
@@ -207,4 +207,6 @@ example.controller('MainCtrl', function($scope, $ionicSideMenuDelegate) {
     $ionicSideMenuDelegate.toggleLeft();
 
   }
+
+
 });
