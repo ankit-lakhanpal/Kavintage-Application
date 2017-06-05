@@ -216,6 +216,12 @@ ion-tabs .tab-item {
 
 }
 
+.orderCount{
+  height: 20px;
+  width: 20px;
+  background-color: black;
+}
+
 .addIcon {
   /*padding-right: 8vw;
   padding-bottom: 12px;*/
@@ -238,10 +244,35 @@ font-size: 20px;
   padding-right: 0px;
 }
 
-.mLtext {
+#numberInTheMiddlwOfTheBottle1{
   display: flex;
   justify-content: center;
   vertical-align: middle;
+  margin-top: -35px;
+  margin-right: 1px;
+}
+
+#numberInTheMiddlwOfTheBottle2{
+  display: flex;
+  justify-content: center;
+  vertical-align: middle;
+  margin-top: -35px;
+  margin-right: 1px;
+}
+
+.mLtext {
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+  vertical-align: middle;
+}
+
+.mLtext123{
+
+    display: flex;
+    justify-content: center;
+    vertical-align: middle;
+
 }
 
 .iconNew{

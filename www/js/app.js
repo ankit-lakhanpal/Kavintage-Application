@@ -5,6 +5,7 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.controllers' is found in controllers.js
 var width = window.innerWidth;
+var person = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,];
 console.log("[INFO]: Screen size:" + width);
 
 // document.getElementById("thickShakes-list-item2").style.width = width;
@@ -196,7 +197,19 @@ example.controller("ExampleController", function($scope, $ionicSlideBoxDelegate)
     indexCheck = index;
     count++;
   };
+
+  $scope.addBottle = function(index) {
+    document.getElementById("numberInTheMiddlwOfTheBottle1").innerHTML= count1;
+  };
+
+  $scope.addBottle = function(index) {
+    person[index]=person[index]+1;
+    console.log(person);
+    document.getElementById("numberInTheMiddlwOfTheBottle1").innerHTML= person[index];
+  };
 });
+
+
 
 example.config(function($ionicConfigProvider) {
   $ionicConfigProvider.tabs.position('bottom');

@@ -16,7 +16,7 @@
             <i class="icon ion-search placeholder-icon" id="cartIcon1"></i>
             <input type="search" placeholder="Enter your item">
           </label>
-           <ion-item ng-click="moveCard(1)" class="list_border_mainmenu card_menu_text item-thumbnail-left item-icon-right assertive" id="thickShakes-list-item1">
+          <ion-item  class="list_border_mainmenu card_menu_text item-thumbnail-left item-icon-right assertive" id="thickShakes-list-item1">
             <img src="img/SeFUA2SVeFxzc1J4lSAd_17918919_1022150551250014_1097248892_n.png">
             <h2assertive>
               <i class="starcolor ion-android-star"></i>
@@ -25,7 +25,7 @@
               <i class="starcolor ion-android-star"></i>
               <i class="starcolor ion-android-star-half"></i>
               <div class="userNumber">(678)</div>
-              <div class="productName">KitKat Milkshake</div>
+              <div ng-click="moveCard(1)" class="productName">KitKat Milkshake</div>
               <div class="productDetail CustomFont"> Kavintage originals</div>
               <div class="productAmountSmall">₹80 (S)</div>
               <div class="productAmountMedium">₹100 (M)</div>
@@ -34,17 +34,20 @@
             <div class="cardSlide">
               <div class="bottleAndButtons">
                 <i class="ion-ios-minus-outline subIconLeftAndRight"></i>
-                <img class="MilkBottle" src="img/milk-bottle.png"></img>
+                <img class="MilkBottle" src="img/milk-bottle.png">
+              </img>
                 <i class="ion-ios-plus-outline subIconLeftAndRight"></i>
               </div>
+              <p id="numberInTheMiddlwOfTheBottle1">0</p>
               <p class="mLtext">500ml</p>
             </div>
             <div class="cardSlide right">
               <div class="bottleAndButtons">
-                <i class="ion-ios-minus-outline subIconLeftAndRight"></i>
+                <i ng-click="subBottle(2)" class="ion-ios-minus-outline subIconLeftAndRight"></i>
                 <img class="MilkBottle" src="img/milk-bottle.png"></img>
-                <i class="ion-ios-plus-outline subIconLeftAndRight"></i>
+                <i ng-click="addBottle(2)" class="ion-ios-plus-outline subIconLeftAndRight"></i>
               </div>
+              <p id="numberInTheMiddlwOfTheBottle2">0</p>
               <p class="mLtext">300ml</p>
             </div>
           </ion-item>
@@ -795,17 +798,17 @@
             <img src="img/nY7imrySAytSwS3Cq4A1_bacon-milkshake.jpg">
             <h2assertive>
 
-                <i class="starcolor ion-android-star"></i>
-                <i class="starcolor starcolor ion-android-star"></i>
-                <i class="starcolor ion-android-star"></i>
-                <i class="starcolor ion-android-star"></i>
-                <i class="starcolor ion-android-star-half"></i>
-                <div class="userNumber">(678)</div>
-                <div class="productName">Cold Coffee</div>
-                <div class="productDetail CustomFont"> Kavintage originals</div>
-                <div class="productAmountSmall">₹80 (S)</div>
-                <div class="productAmountMedium">₹100 (M)</div>
-                <i class="icon ion-android-cart iconNew starcolor"></i>
+              <i class="starcolor ion-android-star"></i>
+              <i class="starcolor starcolor ion-android-star"></i>
+              <i class="starcolor ion-android-star"></i>
+              <i class="starcolor ion-android-star"></i>
+              <i class="starcolor ion-android-star-half"></i>
+              <div class="userNumber">(678)</div>
+              <div class="productName">Cold Coffee</div>
+              <div class="productDetail CustomFont"> Kavintage originals</div>
+              <div class="productAmountSmall">₹80 (S)</div>
+              <div class="productAmountMedium">₹100 (M)</div>
+              <i class="icon ion-android-cart iconNew starcolor"></i>
 
             </h2assertive>
             <div class="cardSlide">
@@ -842,15 +845,18 @@
               <div class="productAmountMedium">₹100 (M)</div>
               <i class="icon ion-android-cart iconNew starcolor"></i>
 
-            
+
             </h2assertive>
             <div class="cardSlide">
+
               <div class="bottleAndButtons">
                 <i class="ion-ios-minus-outline subIconLeftAndRight"></i>
                 <img class="MilkBottle" src="img/milk-bottle.png"></img>
                 <i class="ion-ios-plus-outline subIconLeftAndRight"></i>
               </div>
               <p class="mLtext">500ml</p>
+              <p class="mLtext123">500ml</p>
+
             </div>
             <div class="cardSlide right">
               <div class="bottleAndButtons">
