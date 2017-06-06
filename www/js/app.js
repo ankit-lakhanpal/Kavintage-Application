@@ -5,9 +5,18 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.controllers' is found in controllers.js
 var width = window.innerWidth;
-var person = [1,1,1,1,1,1];
-person.fill(2);
-console.log("[INFO]: Screen size:" + width);
+var person = [
+  ["Article Name |", "Quantity"],
+  ["Kitkat Milkshake", 0],
+  ["Oreo Milkshake", 0],
+  ["Tutty fruity", 0],
+  ["Thandai", 0],
+  ["Kaser Badam", 0],
+  ["Mint Oreo", 0]
+];
+// console.log("[Debug]: "+person[0][0] + " " + person[0][1]);
+// console.log("[Debug]: "+person[1][0] + " " + person[1][1]);
+// console.log("[INFO]: Screen size:" + width);
 
 // document.getElementById("thickShakes-list-item2").style.width = width;
 
@@ -200,17 +209,31 @@ example.controller("ExampleController", function($scope, $ionicSlideBoxDelegate)
   };
 
   $scope.subBottle = function(index) {
-  if(person[index] != 0){
-    person[index]=person[index]-1;
-    console.log(person);
-    document.getElementById("numberInTheMiddlwOfTheBottle"+index).innerHTML= person[index];
-  }
+    if (person[index][1] != 0) {
+      person[index][1] = person[index][1] - 1;
+      console.log(person);
+      document.getElementById("numberInTheMiddlwOfTheBottle" + index).innerHTML = person[index][1];
+    }
+    if(person[index][1]>99){
+      document.getElementById("numberInTheMiddlwOfTheBottle"+index).style.fontSize="10px";
+    }else if(person[index][1]>9 && person[index][1]<100){
+        document.getElementById("numberInTheMiddlwOfTheBottle"+index).style.fontSize="12px";
+    }else{
+      document.getElementById("numberInTheMiddlwOfTheBottle"+index).style.fontSize="16px";
+    }
   };
 
   $scope.addBottle = function(index) {
-    person[index]=person[index]+1;
+    person[index][1] = person[index][1] + 1;
     console.log(person);
-    document.getElementById("numberInTheMiddlwOfTheBottle"+index).innerHTML= person[index];
+    document.getElementById("numberInTheMiddlwOfTheBottle" + index).innerHTML = person[index][1];
+    if(person[index][1]>99){
+      document.getElementById("numberInTheMiddlwOfTheBottle"+index).style.fontSize="10px";
+    }else if(person[index][1]>9 && person[index][1]<100){
+        document.getElementById("numberInTheMiddlwOfTheBottle"+index).style.fontSize="12px";
+    }else{
+      document.getElementById("numberInTheMiddlwOfTheBottle"+index).style.fontSize="16px";
+    }
   };
 });
 

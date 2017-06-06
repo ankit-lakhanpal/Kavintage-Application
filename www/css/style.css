@@ -56,9 +56,9 @@
 }
 
 .tabs-negetive>.tabs {
-  background-color: #fb4500; !important;
+  background-color: #fb4500;
+  !important;
 }
-
 
 ion-tabs .tab-item {
   color: #ffffff;
@@ -192,7 +192,7 @@ ion-tabs .tab-item {
   height: 100px;
 }
 
-.cardSlide.right{
+.cardSlide.right {
   border-right: 1px solid rgb(221, 221, 221);
 }
 
@@ -200,8 +200,8 @@ ion-tabs .tab-item {
   margin-bottom: 20px;
 }
 
-.subIconLeftAndRight{
-  display:   inline-flex;
+.subIconLeftAndRight {
+  display: inline-flex;
   font-size: 15px;
   padding: 10px 10px 5px 10px;
   vertical-align: middle;
@@ -209,14 +209,13 @@ ion-tabs .tab-item {
   margin-bottom: 0px;
 }
 
-.bottleAndButtons{
-    display: table;
-    margin:0 auto;
-    color: #fb4500;
-
+.bottleAndButtons {
+  display: table;
+  margin: 0 auto;
+  color: #fb4500;
 }
 
-.orderCount{
+.orderCount {
   height: 20px;
   width: 20px;
   background-color: black;
@@ -225,39 +224,31 @@ ion-tabs .tab-item {
 .addIcon {
   /*padding-right: 8vw;
   padding-bottom: 12px;*/
-
 }
-
 
 h2assertive {
   display: inline-block;
 }
 
-.productName{
-/*font-style: italic;*/
-font-family:  fantasy;
-font-size: 20px;
-
+.productName {
+  /*font-style: italic;*/
+  font-family: fantasy;
+  font-size: 20px;
 }
 
 .list_border_mainmenu {
   padding-right: 0px;
 }
 
-#numberInTheMiddlwOfTheBottle1{
+.item .numberInsideBottle {
+  height: 20px;
   display: flex;
   justify-content: center;
   vertical-align: middle;
   margin-top: -35px;
   margin-right: 1px;
-}
-
-#numberInTheMiddlwOfTheBottle2{
-  display: flex;
-  justify-content: center;
-  vertical-align: middle;
-  margin-top: -35px;
-  margin-right: 1px;
+  font-size: 16px;
+  color: #fb4500;
 }
 
 .mLtext {
@@ -267,66 +258,67 @@ font-size: 20px;
   vertical-align: middle;
 }
 
-.mLtext123{
-
-    display: flex;
-    justify-content: center;
-    vertical-align: middle;
-
+.mLtext123 {
+  display: flex;
+  justify-content: center;
+  vertical-align: middle;
 }
 
-.iconNew{
+.iconNew {
   opacity: 0.9;
   /*font-size: 10000px;*/
   /*border  : 1px solid #464646;*/
-
 }
-.icon.ion-android-cart.iconNew{
+
+.icon.ion-android-cart.iconNew {
   font-size: 20px;
 }
 
-.starcolor{
+.starcolor {
   color: #f0632e;
 }
 
-.userNumber{
+.userNumber {
   display: inline-block;
   opacity: 0.5;
-  font-size: 10px;
+    font-size: 10px;
   font-family: monospace;
-
 }
 
-.productDetail{
+.productDetail {
   opacity: 0.5;
   font-size: 12px;
 }
 
-.deliveryDetails{
+.deliveryDetails {
   opacity: 0.5;
   font-size: 10px;
   float: right;
 }
 
-.productAmount{
+.productAmount {
   font-size: 12px;
   opacity: 0.5;
   color: rgb(98, 98, 98);
 }
 
-.productAmountMedium{
+.productAmountMedium {
   padding-left: 5px;
   font-size: 10px;
   opacity: 0.5;
   display: inline-block;
 }
 
-.productAmountSmall{
+.productAmountSmall {
   font-size: 10px;
   opacity: 0.5;
   display: inline-block;
 }
 
-.CustomFont{
-   font-family: "arial";
+.CustomFont {
+  font-family: "arial";
+}
+
+.floatedLeft{
+
 }
