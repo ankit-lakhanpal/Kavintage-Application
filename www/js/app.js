@@ -1,5 +1,4 @@
 // Ionic Starter App
-
 // angular.module is a global place for creating, registering and retrieving Angular modules
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
@@ -17,7 +16,6 @@ var person = [
 // console.log("[Debug]: "+person[0][0] + " " + person[0][1]);
 // console.log("[Debug]: "+person[1][0] + " " + person[1][1]);
 // console.log("[INFO]: Screen size:" + width);
-
 // document.getElementById("thickShakes-list-item2").style.width = width;
 
 var example = angular.module('starter', ['ionic', 'starter.controllers'])
@@ -52,6 +50,15 @@ var example = angular.module('starter', ['ionic', 'starter.controllers'])
         views: {
           'menuContent': {
             templateUrl: 'templates/search.html'
+          }
+        }
+      })
+
+      .state('app.orderDetails', {
+        url: '/orderDetails',
+        views: {
+          'menuContent': {
+            templateUrl: 'templates/orderDetails.html'
           }
         }
       })

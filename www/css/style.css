@@ -319,6 +319,19 @@ h2assertive {
   font-family: "arial";
 }
 
-.floatedLeft{
+.icon.ion-ios-cart.leftAlign{
+   display: inline-block;
+}
 
+/*.button.button-icon.ion-android-cart{
+  display: inline-block;
+  position: absolute;
+}
+
+.title.black{
+  width: 50vw;
+}*/
+
+.orderDetailsItem{
+width: calc(100vw - 20px);
 }
