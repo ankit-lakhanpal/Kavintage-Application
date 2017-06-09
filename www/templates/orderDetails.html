@@ -1,20 +1,26 @@
-<ion-view id="page5">
+<ion-view id="page5"  ng-controller="myCtrl">
   <ion-content padding="true" class="has-header">
     <h3 id="orderDetails-heading1" style="color:#000000;font-weight:300;font-style:;text-align:center;">Your Orders<br><br></h3>
     <div class="spacer" style="width: 300px; height: 369px;">
       <div>
-        <ion-item-group>
-          <!-- <ion-item class="orderDetailsListHeader">Product</ion-item> -->
-          <!-- <ion-list-header>Yours Orders<br><br></ion-list-header> -->
-
-          <ion-item class="orderDetailsItem">Angola</ion-item>
-          <ion-item class="orderDetailsItem">Argentina</ion-item>
-        </ion-item-group>
-        <!-- <ion-list>
-          <ion-item ng-repeat="item in items">
-            Hello, {{item}}!
+        <ion-item-group ng-app="myApp" ng-repeat="x in records" >
+          <ion-item class="orderDetailsItem">{{x}}
+            <h2assertive class="orderQuantity">(3L,2S)</h2assertive>
+            <h2assertive class="orderPrice" id="orderPrice">100₹</h2assertive>
           </ion-item>
-        </ion-list> -->
+          <!-- <p>100₹</p> -->
+        </ion-item-group>
+      </div>
+    </div>
+    <div class="item item-button-right">
+      Use Paytm
+      <div class="buttons">
+        <button class="button button-positive">
+          <i class="icon icon ion-checkmark"></i>
+        </button>
+        <!-- <button class="button button-assertive"> -->
+          <!-- <i class="icon icon ion-close"></i> -->
+        </button>
       </div>
     </div>
     <h4 id="orderDetails-heading2" style="color:#000000;font-weight:300;">Total Amount:</h4>

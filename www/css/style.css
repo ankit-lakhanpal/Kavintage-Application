@@ -335,3 +335,13 @@ h2assertive {
 .orderDetailsItem{
 width: calc(100vw - 20px);
 }
+
+.orderPrice{
+  float: right;
+}
+
+.orderQuantity{
+  font-size: 12px;
+  color: rgb(170, 170, 170);
+
+}

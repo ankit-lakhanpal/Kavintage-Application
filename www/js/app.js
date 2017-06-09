@@ -4,17 +4,21 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.controllers' is found in controllers.js
 var width = window.innerWidth;
-var person = [
-  ["Article Name |", "Quantity"],
-  ["Kitkat Milkshake", 0],
-  ["Oreo Milkshake", 0],
-  ["Tutty fruity", 0],
-  ["Thandai", 0],
-  ["Kaser Badam", 0],
-  ["Mint Oreo", 0]
+var products = [
+  "Kitkat Milkshake",
+  "Oreo Milkshake",
+  "Tutty fruity",
+  "Thandai",
+  "Kaser Badam",
+  "Mint Oreo"
 ];
-// console.log("[Debug]: "+person[0][0] + " " + person[0][1]);
-// console.log("[Debug]: "+person[1][0] + " " + person[1][1]);
+var checkoutProducts = new Array();
+var priceList = new Array();
+var small = [0, 0, 0, 0, 0, 0];
+var large = [0, 0, 0, 0, 0, 0];
+
+// console.log("[Debug]: "+products[0][0][0] + " " + products[0][1][]);
+// console.log("[Debug]: "+products[1][0] + " " + productss[1][1]);
 // console.log("[INFO]: Screen size:" + width);
 // document.getElementById("thickShakes-list-item2").style.width = width;
 
@@ -215,36 +219,57 @@ example.controller("ExampleController", function($scope, $ionicSlideBoxDelegate)
     count++;
   };
 
-  $scope.subBottle = function(index) {
-    if (person[index][1] != 0) {
-      person[index][1] = person[index][1] - 1;
-      console.log(person);
-      document.getElementById("numberInTheMiddlwOfTheBottle" + index).innerHTML = person[index][1];
-    }
-    if(person[index][1]>99){
-      document.getElementById("numberInTheMiddlwOfTheBottle"+index).style.fontSize="10px";
-    }else if(person[index][1]>9 && person[index][1]<100){
-        document.getElementById("numberInTheMiddlwOfTheBottle"+index).style.fontSize="12px";
-    }else{
-      document.getElementById("numberInTheMiddlwOfTheBottle"+index).style.fontSize="16px";
+  $scope.subBottle = function(index, quantity) {
+    if (large[index] != 0 && quantity == 'l') {
+      large[index] = large[index] - 1;
+      console.log(large);
+      document.getElementById("numberInTheMiddlwOfTheBottleLarge" + index).innerHTML = large[index];
+      if (large[index] > 99) {
+        document.getElementById("numberInTheMiddlwOfTheBottleLarge" + index).style.fontSize = "10px";
+      } else if (large[index] > 9 && large[index] < 100) {
+        document.getElementById("numberInTheMiddlwOfTheBottleLarge" + index).style.fontSize = "12px";
+      } else {
+        document.getElementById("numberInTheMiddlwOfTheBottleLarge" + index).style.fontSize = "16px";
+      }
+    } else if (small[index] != 0 && quantity != 'l') {
+      small[index] = small[index] - 1;
+      document.getElementById("numberInTheMiddlwOfTheBottleSmall" + index).innerHTML = small[index];
+      if (small[index] > 99) {
+        document.getElementById("numberInTheMiddlwOfTheBottleSmall" + index).style.fontSize = "10px";
+      } else if (small[index] > 9 && small[index] < 100) {
+        document.getElementById("numberInTheMiddlwOfTheBottleSmall" + index).style.fontSize = "12px";
+      } else {
+        document.getElementById("numberInTheMiddlwOfTheBottleSmall" + index).style.fontSize = "16px";
+      }
     }
   };
 
-  $scope.addBottle = function(index) {
-    person[index][1] = person[index][1] + 1;
-    console.log(person);
-    document.getElementById("numberInTheMiddlwOfTheBottle" + index).innerHTML = person[index][1];
-    if(person[index][1]>99){
-      document.getElementById("numberInTheMiddlwOfTheBottle"+index).style.fontSize="10px";
-    }else if(person[index][1]>9 && person[index][1]<100){
-        document.getElementById("numberInTheMiddlwOfTheBottle"+index).style.fontSize="12px";
-    }else{
-      document.getElementById("numberInTheMiddlwOfTheBottle"+index).style.fontSize="16px";
+  $scope.addBottle = function(index, quantity) {
+    if (quantity == 's') {
+      small[index] = small[index] + 1;
+      console.log(small);
+      document.getElementById("numberInTheMiddlwOfTheBottleSmall" + index).innerHTML = small[index];
+      if (small[index] > 99) {
+        document.getElementById("numberInTheMiddlwOfTheBottleSmall" + index).style.fontSize = "10px";
+      } else if (small[index] > 9 && small[index] < 100) {
+        document.getElementById("numberInTheMiddlwOfTheBottleSmall" + index).style.fontSize = "12px";
+      } else {
+        document.getElementById("numberInTheMiddlwOfTheBottleSmall" + index).style.fontSize = "16px";
+      }
+    } else {
+      large[index] = large[index] + 1;
+      console.log(large);
+      document.getElementById("numberInTheMiddlwOfTheBottleLarge" + index).innerHTML = large[index];
+      if (large[index] > 99) {
+        document.getElementById("numberInTheMiddlwOfTheBottleLarge" + index).style.fontSize = "10px";
+      } else if (large[index] > 9 && large[index] < 100) {
+        document.getElementById("numberInTheMiddlwOfTheBottleLarge" + index).style.fontSize = "12px";
+      } else {
+        document.getElementById("numberInTheMiddlwOfTheBottleLarge" + index).style.fontSize = "16px";
+      }
     }
   };
 });
-
-
 
 example.config(function($ionicConfigProvider) {
   $ionicConfigProvider.tabs.position('bottom');
@@ -256,5 +281,33 @@ example.controller('MainCtrl', function($scope, $ionicSideMenuDelegate) {
 
   }
 
+});
 
+// var app = angular.module("myApp", []);
+example.controller("myCtrl", function($scope) {
+
+
+
+  for(var productsOrdered=0;productsOrdered<=products.length-1;productsOrdered++){
+    if(small[productsOrdered] !=0 || large[productsOrdered] !=0){
+      console.log('Small i = '+ productsOrdered);
+     checkoutProducts[productsOrdered] = products[productsOrdered];
+     priceList[productsOrdered]=(small[productsOrdered]*80)+(large[productsOrdered]*100);
+    }
+  }
+
+
+  console.log('checkoutProducts: '+checkoutProducts);
+
+  // $scope.records = checkoutProducts;
+  $scope.records = products;
+
+  // document.getElementById("orderPrice").innerHTML = priceList[0];
+
+  // $scope.records = [
+  //     "Alfreds Futterkiste",
+  //     "Berglunds snabbköp",
+  //     "Centro comercial Moctezuma",
+  //     "Ernst Handel",
+  // ]
 });
