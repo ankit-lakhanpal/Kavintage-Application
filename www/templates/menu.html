@@ -1,4 +1,4 @@
-<ion-side-menus enable-menu-with-back-views="true">
+<ion-side-menus enable-menu-with-back-views="true" ng-controller="myCtrl">
   <ion-side-menu-content>
     <ion-nav-bar class="bar-stable">
       <ion-nav-back-button>
@@ -30,7 +30,7 @@
         <ion-item no-lines class="list_border" id="menu-list-item-divider1" data-componentid=""> My information</ion-item>
         <ion-item class="item-icon-left item-borderless custom_font" id="menu-list-item3" data-componentid="list-item3" ng-click="login()">
           <i class="icon ion-star custom_color main_side_list_text"></i>Login</ion-item>
-        <ion-item class="item-icon-left item-borderless custom_font menu-close" id="menu-list-item4" data-componentid="list-item4" href="#/app/orderDetails">
+        <ion-item class="item-icon-left item-borderless custom_font menu-close" id="menu-list-item4" data-componentid="list-item4" ng-click="goToTab()">
           <i class="icon ion-ios-list-outline custom_color main_side_list_text"></i>My Orders</ion-item>
         <ion-item class="item-icon-left item-borderless custom_font" id="menu-list-item5" data-componentid="list-item5">
           <i class="icon ion-android-cart custom_color main_side_list_text"></i>My Cart</ion-item>

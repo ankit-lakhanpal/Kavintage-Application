@@ -3,12 +3,11 @@
     <h3 id="orderDetails-heading1" style="color:#000000;font-weight:300;font-style:;text-align:center;">Your Orders<br><br></h3>
     <div class="spacer" style="width: 300px; height: 369px;">
       <div>
-        <ion-item-group ng-app="myApp" ng-repeat="x in records" >
-          <ion-item class="orderDetailsItem">{{x}}
-            <h2assertive class="orderQuantity">(3L,2S)</h2assertive>
-            <h2assertive class="orderPrice" id="orderPrice">100₹</h2assertive>
+        <ion-item-group ng-app="myApp">
+          <ion-item class="orderDetailsItem" ng-repeat="x in records">{{x}}
+            <h2assertive id="orderQuantity" class="orderQuantity" >0S0L</h2assertive>
+            <h2assertive class="orderPrice" id="orderPrice" >000</h2assertive>
           </ion-item>
-          <!-- <p>100₹</p> -->
         </ion-item-group>
       </div>
     </div>
