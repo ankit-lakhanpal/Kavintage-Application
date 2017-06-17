@@ -10,18 +10,35 @@
     "Tutty fruity",
     "Thandai",
     "Kaser Badam",
-    "Mint Oreo"
+    "Mint Oreo",
+    "Strawberry Savory",
+    "Chocolate Hazelnut",
+    "Chocolate Peanut Butter",
+    "Choco Chip",
+    "Kavintage Raspberry",
+    "Kavintage Blueberry",
+    "Alphanso Mango",
+    "Exotique strawberry",
+    "ButterScotch",
+    "Strawberry",
+    "Mango",
+    "Vanilla",
+    "Pineapple",
+    "Rasmalai",
+    "Healthy Faluda",
+    "Cold Coffee",
+    "Sugar Free Coffee"
   ];
   var checkoutProducts = new Array();
   var priceList = new Array();
   var smallarray = new Array();
   var largearray = new Array();
-  var small = [0, 0, 0, 0, 0, 0];
-  var large = [0, 0, 0, 0, 0, 0];
+  var small = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+  var large = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
 
-  // console.log("[Debug]: "+products[0][0][0] + " " + products[0][1][]);
-  // console.log("[Debug]: "+products[1][0] + " " + productss[1][1]);
-  // console.log("[INFO]: Screen size:" + width);
+  // //console.log("[Debug]: "+products[0][0][0] + " " + products[0][1][]);
+  // //console.log("[Debug]: "+products[1][0] + " " + productss[1][1]);
+  // //console.log("[INFO]: Screen size:" + width);
   // document.getElementById("thickShakes-list-item2").style.width = width;
 
   var example = angular.module('starter', ['ionic', 'starter.controllers'])
@@ -194,7 +211,7 @@
           .duration('0.1s')
           .end();
 
-        console.log("[Correction loop]Count is: " + count + ", Index used is " + index + ",Previous index is " + indexCheck);
+        //console.log("[Correction loop]Count is: " + count + ", Index used is " + index + ",Previous index is " + indexCheck);
       }
 
       if (count % 2 == 0) {
@@ -204,7 +221,7 @@
           .duration('0.1s')
           .end();
 
-        console.log("[Even]Count is: " + count + ", Index used is " + index + ",Previous index is " + indexCheck);
+        //console.log("[Even]Count is: " + count + ", Index used is " + index + ",Previous index is " + indexCheck);
 
 
       } else {
@@ -213,7 +230,7 @@
           .sub('margin-left', -movePosition)
           .duration('0.1s')
           .end();
-        console.log("[Even]Count is: " + count + ", Index used is " + index + ",Previous index is " + indexCheck);
+        //console.log("[Even]Count is: " + count + ", Index used is " + index + ",Previous index is " + indexCheck);
 
       }
 
@@ -224,7 +241,7 @@
     $scope.subBottle = function(index, quantity) {
       if (large[index] != 0 && quantity == 'l') {
         large[index] = large[index] - 1;
-        console.log(large);
+        //console.log(large);
         document.getElementById("numberInTheMiddlwOfTheBottleLarge" + index).innerHTML = large[index];
         if (large[index] > 99) {
           document.getElementById("numberInTheMiddlwOfTheBottleLarge" + index).style.fontSize = "10px";
@@ -249,7 +266,7 @@
     $scope.addBottle = function(index, quantity) {
       if (quantity == 's') {
         small[index] = small[index] + 1;
-        console.log(small);
+        //console.log(small);
         document.getElementById("numberInTheMiddlwOfTheBottleSmall" + index).innerHTML = small[index];
         if (small[index] > 99) {
           document.getElementById("numberInTheMiddlwOfTheBottleSmall" + index).style.fontSize = "10px";
@@ -260,7 +277,7 @@
         }
       } else {
         large[index] = large[index] + 1;
-        console.log(large);
+        //console.log(large);
         document.getElementById("numberInTheMiddlwOfTheBottleLarge" + index).innerHTML = large[index];
         if (large[index] > 99) {
           document.getElementById("numberInTheMiddlwOfTheBottleLarge" + index).style.fontSize = "10px";
@@ -297,7 +314,7 @@
         }
         else{
           checkoutProducts.splice(productsOrdered , 1);
-          console.log("checkoutProducts"+checkoutProducts);
+          //console.log("checkoutProducts"+checkoutProducts);
         }
       }
 
@@ -310,18 +327,24 @@
         }
       }
 
-      console.log(smallarray);
-      console.log(largearray);
+      //console.log(smallarray);
+      //console.log(largearray);
       $scope.records = checkoutProducts;
+    console.log(checkoutProducts);
       $scope.amount = priceList;
       $scope.quantitySmall = small;
       $scope.quantityLarge = large;
-    }
 
-      for (var checkoutProducts = 0; checkoutProducts <= products.length - 1; checkoutProducts++) {
-        document.getElementsByClassName('orderQuantity')[checkoutProducts].innerHTML="3L4S"
 
+    // $scope.editOrderQuantityInfo = function() {
+     setTimeout(function(){
+      for (var x = 0; x <= checkoutProducts.length - 1; x++) {
+        document.getElementsByClassName('orderQuantity')[x].innerHTML="("+small[x]+"S"+large[x]+"L)";
+        document.getElementsByClassName('orderPrice')[x].innerHTML=priceList[x]+"₹";
       }
+    }, 10);
+// }
+}
 
 
 

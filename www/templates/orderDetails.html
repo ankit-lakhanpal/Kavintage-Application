@@ -3,15 +3,15 @@
     <h3 id="orderDetails-heading1" style="color:#000000;font-weight:300;font-style:;text-align:center;">Your Orders<br><br></h3>
     <div class="spacer" style="width: 300px; height: 369px;">
       <div>
-        <ion-item-group ng-app="myApp">
+        <ion-item-group ng-app="myApp" >
           <ion-item class="orderDetailsItem" ng-repeat="x in records">{{x}}
-            <h2assertive id="orderQuantity" class="orderQuantity" >0S0L</h2assertive>
-            <h2assertive class="orderPrice" id="orderPrice" >000</h2assertive>
+            <h2assertive id="orderQuantity" class="orderQuantity">0S0L</h2assertive>
+            <h2assertive class="orderPrice" id="orderPrice">000</h2assertive>
           </ion-item>
         </ion-item-group>
       </div>
     </div>
-    <div class="item item-button-right">
+    <div class="item item-button-right" onload="editOrderQuantityInfo()">
       Use Paytm
       <div class="buttons">
         <button class="button button-positive">
