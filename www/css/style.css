@@ -13,10 +13,6 @@
   height: 100%;
 }
 
-.orange {
-  color: #f0632e;
-}
-
 .white {
   color: white;
 }
@@ -55,24 +51,11 @@
   color: white;
 }
 
-.tabs-negetive>.tabs {
-  background-color: #fb4500;
-  !important;
-}
 
 ion-tabs .tab-item {
   color: #ffffff;
 }
 
-.KavintageHeaderFonts {}
-
-.card_menu_text {
-  font-size: 14px;
-  font-family: 'Rubik', sans-serif;
-  color: black;
-  /*text-align: center;*/
-  background-color: #ffedee !important;
-}
 
 .item_details {
   color: #61605f;
@@ -85,10 +68,6 @@ ion-tabs .tab-item {
 }
 
 
-/*ion-content {
-  background-image: url('http://media.tumblr.com/05551e707b4b2145352febbdc7dee99f/tumblr_inline_mr6k63GXwD1qz4rgp.jpg');
-}*/
-
 .list_border {
   top: 5px;
   font-size: 12px !important;
@@ -100,12 +79,7 @@ ion-tabs .tab-item {
   font-family: 'Maven Pro', sans-serif;
 }
 
-.black {
-  background-color: #fb4500;
-  color: white;
-  font-size: 18px !important;
-  font-family: 'fantacy';
-}
+
 
 .list_border_mainmenu {
   top: 5px;
@@ -130,7 +104,7 @@ ion-tabs .tab-item {
 }
 
 .dark .item {
-  background-color: #3f4041;
+  backqground-color: #3f4041;
   border: none;
   border-top: 1px solid #464646;
   border-bottom: 2px solid #333333;
@@ -209,22 +183,12 @@ ion-tabs .tab-item {
   margin-bottom: 0px;
 }
 
-.bottleAndButtons {
-  display: table;
-  margin: 0 auto;
-  color: #fb4500;
-}
-
 .orderCount {
   height: 20px;
   width: 20px;
   background-color: black;
 }
 
-.addIcon {
-  /*padding-right: 8vw;
-  padding-bottom: 12px;*/
-}
 
 h2assertive {
   display: inline-block;
@@ -240,16 +204,7 @@ h2assertive {
   padding-right: 0px;
 }
 
-.item .numberInsideBottle {
-  height: 20px;
-  display: flex;
-  justify-content: center;
-  vertical-align: middle;
-  margin-top: -35px;
-  margin-right: 1px;
-  font-size: 16px;
-  color: #fb4500;
-}
+
 
 .mLtext {
   margin-top: 15px;
@@ -274,9 +229,7 @@ h2assertive {
   font-size: 20px;
 }
 
-.starcolor {
-  color: #f0632e;
-}
+
 
 .userNumber {
   display: inline-block;
@@ -323,15 +276,6 @@ h2assertive {
    display: inline-block;
 }
 
-/*.button.button-icon.ion-android-cart{
-  display: inline-block;
-  position: absolute;
-}
-
-.title.black{
-  width: 50vw;
-}*/
-
 .orderDetailsItem{
 width: calc(100vw - 20px);
 }
@@ -341,8 +285,53 @@ width: calc(100vw - 20px);
 }
 
 .orderQuantity{
-  
+
   font-size: 12px;
   color: rgb(170, 170, 170);
 
+}
+
+.bottleAndButtons {
+  display: table;
+  margin: 0 auto;
+  color: #fb4500;
+}
+
+.black {
+  background-color: #fb4500;
+  color: white;
+  font-size: 18px !important;
+  font-family: 'fantacy';
+}
+
+.tabs-negetive>.tabs {
+  background-color: #fb4500;
+  !important;
+}
+
+.item .numberInsideBottle {
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  vertical-align: middle;
+  margin-top: -35px;
+  margin-right: 1px;
+  font-size: 16px;
+  color: #fb4500;
+}
+
+.starcolor {
+  color: #fb4500;
+}
+
+.card_menu_text {
+  font-size: 14px;
+  font-family: 'Rubik', sans-serif;
+  color: black;
+  /*text-align: center;*/
+  background-color: #ffedee !important;
+}
+
+.orange {
+  color: #f0632e;
 }

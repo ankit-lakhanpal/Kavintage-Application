@@ -1,8 +1,4 @@
-  // I  onic Starter App
-  // angular.module is a global place for creating, registering and retrieving Angular modules
-  // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
-  // the 2nd parameter is an array of 'requires'
-  // 'starter.controllers' is found in controllers.js
+  var appName = 'kavintage';
   var width = window.innerWidth;
   var products = [
     "Kitkat Milkshake",
@@ -36,12 +32,9 @@
   var small = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
   var large = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
 
-  // //console.log("[Debug]: "+products[0][0][0] + " " + products[0][1][]);
-  // //console.log("[Debug]: "+products[1][0] + " " + productss[1][1]);
-  // //console.log("[INFO]: Screen size:" + width);
-  // document.getElementById("thickShakes-list-item2").style.width = width;
+  var themes = []
 
-  var example = angular.module('starter', ['ionic', 'starter.controllers'])
+  var example = angular.module('kavintage', ['ionic', 'kavintage.controllers', 'backand'])
     .run(function($ionicPlatform) {
       $ionicPlatform.ready(function() {
         // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
@@ -113,7 +106,6 @@
             }
           }
         });
-      // if none of the above states are matched, use this as the fallback
       $urlRouterProvider.otherwise('/app/playlists');
     })
 
@@ -184,14 +176,18 @@
           });
         }
       };
+    })
+
+    .config(function(BackandProvider) {
+      BackandProvider.setAppName('kavintage');
+      BackandProvider.setAnonymousToken('4cbbb0c7-bd17-4cc9-b034-1988649655a6');
+
     });
+
 
   var count = 0;
   var indexCheck = 999;
-
   example.controller("ExampleController", function($scope, $ionicSlideBoxDelegate) {
-
-
     $scope.navSlide = function(index) {
       $ionicSlideBoxDelegate.slide(index, 500);
     };
@@ -211,7 +207,7 @@
           .duration('0.1s')
           .end();
 
-        //console.log("[Correction loop]Count is: " + count + ", Index used is " + index + ",Previous index is " + indexCheck);
+        console.log("[Correction loop]Count is: " + count + ", Index used is " + index + ",Previous index is " + indexCheck);
       }
 
       if (count % 2 == 0) {
@@ -221,7 +217,7 @@
           .duration('0.1s')
           .end();
 
-        //console.log("[Even]Count is: " + count + ", Index used is " + index + ",Previous index is " + indexCheck);
+        console.log("[Even]Count is: " + count + ", Index used is " + index + ",Previous index is " + indexCheck);
 
 
       } else {
@@ -230,7 +226,6 @@
           .sub('margin-left', -movePosition)
           .duration('0.1s')
           .end();
-        //console.log("[Even]Count is: " + count + ", Index used is " + index + ",Previous index is " + indexCheck);
 
       }
 
@@ -297,13 +292,10 @@
   example.controller('MainCtrl', function($scope, $ionicSideMenuDelegate) {
     $scope.toggleLeft = function() {
       $ionicSideMenuDelegate.toggleLeft();
-
     }
-
   });
 
-  // var app = angular.module("myApp", []);
-  example.controller("myCtrl", function($scope, $state) {
+  example.controller("myCtrl", function($scope, $state, placeOrder) {
     $scope.goToTab = function() {
       $state.go('app.orderDetails');
 
@@ -311,10 +303,11 @@
         if (small[productsOrdered] != 0 || large[productsOrdered] != 0) {
           checkoutProducts[productsOrdered] = products[productsOrdered];
           priceList[productsOrdered] = (small[productsOrdered] * 80) + (large[productsOrdered] * 100);
-        }
-        else{
-          checkoutProducts.splice(productsOrdered , 1);
-          //console.log("checkoutProducts"+checkoutProducts);
+
+          checkoutProducts = checkoutProducts.filter(Boolean);
+          priceList = priceList.filter(Boolean);
+        } else {
+          checkoutProducts.splice(productsOrdered, 1);
         }
       }
 
@@ -326,28 +319,58 @@
           largearray[arrValue] = large[arrValue];
         }
       }
-
-      //console.log(smallarray);
-      //console.log(largearray);
+      checkoutProducts = checkoutProducts.filter(Boolean);
+      priceList = priceList.filter(Boolean);
+      console.log("large: " + large);
+      console.log("smallarray: " + smallarray);
+      console.log("priceList: " + priceList);
+      console.log("checkoutProducts: " + checkoutProducts);
       $scope.records = checkoutProducts;
-    console.log(checkoutProducts);
-      $scope.amount = priceList;
-      $scope.quantitySmall = small;
-      $scope.quantityLarge = large;
+      console.log(checkoutProducts);
+      setTimeout(function() {
+        for (var x = 0; x <= checkoutProducts.length - 1; x++) {
+          document.getElementsByClassName('orderQuantity')[x].innerHTML = "(" + small[x] + "S" + large[x] + "L)";
+          document.getElementsByClassName('orderPrice')[x].innerHTML = priceList[x] + "₹";
+        }
+      }, 10);
+    }
 
+    $scope.products = [];
+    $scope.input = {};
 
-    // $scope.editOrderQuantityInfo = function() {
-     setTimeout(function(){
-      for (var x = 0; x <= checkoutProducts.length - 1; x++) {
-        document.getElementsByClassName('orderQuantity')[x].innerHTML="("+small[x]+"S"+large[x]+"L)";
-        document.getElementsByClassName('orderPrice')[x].innerHTML=priceList[x]+"₹";
-      }
-    }, 10);
-// }
-}
+    function getAllProducts() {
+      placeOrder.getProducts().then(function(results){
+        $scope.products= results.data.data;
+      });
+    }
+    $scope.addproducts = function() {
+      placeOrder.addProducts($scope.input).then(function(results){
+        $scope.input = {};
+        getAllProducts();
+      });
+    }
+    getAllProducts();
+  });
 
-
-
-
-
+  example.service('placeOrder', function($http, Backand) {
+    var service = this,
+      baseUrl = '/1/objects/',
+      objectName = 'items/';
+    function getUrl() {
+      return Backand.getApiUrl() + baseUrl + objectName + '/';
+    }
+    function getUrlForId(itemId) {
+      return getUrl(path) + itemId;
+    }
+    //give all contents of a database
+    getProducts = function() {
+      return $http.get(getUrl());
+    };
+    addProducts = function(productsOrdered) {
+      return $http.post(getUrl(), productsOrdered);
+    };
+    return {
+      getProducts: getProducts,
+      addProducts: addProducts
+    }
   });
