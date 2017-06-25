@@ -335,12 +335,13 @@
       }, 10);
     }
 
-    $scope.products = [];
-    $scope.input = {};
+    $scope.products = ["Kitkat Milkshake","Oreo Milkshake","Tutty fruity"];
+    $scope.input = {'name':'Ankit','fields':{'name':'name'}};
 
     function getAllProducts() {
       placeOrder.getProducts().then(function(results){
         $scope.products= results.data.data;
+        console.log(products);
       });
     }
     $scope.addproducts = function() {
@@ -349,7 +350,7 @@
         getAllProducts();
       });
     }
-    getAllProducts();
+      getAllProducts();
   });
 
   example.service('placeOrder', function($http, Backand) {
@@ -357,7 +358,7 @@
       baseUrl = '/1/objects/',
       objectName = 'items/';
     function getUrl() {
-      return Backand.getApiUrl() + baseUrl + objectName + '/';
+      return Backand.getApiUrl() + baseUrl + objectName;
     }
     function getUrlForId(itemId) {
       return getUrl(path) + itemId;
@@ -366,8 +367,9 @@
     getProducts = function() {
       return $http.get(getUrl());
     };
-    addProducts = function(productsOrdered) {
-      return $http.post(getUrl(), productsOrdered);
+    addProducts = function(productsPlaces) {
+      console.log(productsPlaces);
+      return $http.post(getUrl(), productsPlaces);
     };
     return {
       getProducts: getProducts,
