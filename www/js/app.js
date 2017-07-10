@@ -31,21 +31,17 @@
   var largearray = new Array();
   var small = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
   var large = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
-
-  var themes = []
+  var productsForDB = "";
 
   var example = angular.module('kavintage', ['ionic', 'kavintage.controllers', 'backand'])
     .run(function($ionicPlatform) {
       $ionicPlatform.ready(function() {
-        // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
-        // for form inputs)
         if (window.cordova && window.cordova.plugins.Keyboard) {
           cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
           cordova.plugins.Keyboard.disableScroll(true);
 
         }
         if (window.StatusBar) {
-          // org.apache.cordova.statusbar required
           StatusBar.styleDefault();
         }
       });
@@ -111,23 +107,16 @@
 
     .run(function($ionicPlatform) {
       $ionicPlatform.ready(function() {
-        // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
-        // for form inputs)
         if (window.cordova && window.cordova.plugins && window.cordova.plugins.Keyboard) {
           cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
           cordova.plugins.Keyboard.disableScroll(true);
         }
         if (window.StatusBar) {
-          // org.apache.cordova.statusbar required
           StatusBar.styleDefault();
         }
       });
     })
 
-    /*
-      This directive is used to disable the "drag to open" functionality of the Side-Menu
-      when you are dragging a Slider component.
-    */
     .directive('disableSideMenuDrag', ['$ionicSideMenuDelegate', '$rootScope', function($ionicSideMenuDelegate, $rootScope) {
       return {
         restrict: "A",
@@ -151,9 +140,7 @@
       };
     }])
 
-    /*
-      This directive is used to open regular and dynamic href links inside of inappbrowser.
-    */
+
     .directive('hrefInappbrowser', function() {
       return {
         restrict: 'A',
@@ -207,7 +194,7 @@
           .duration('0.1s')
           .end();
 
-        console.log("[Correction loop]Count is: " + count + ", Index used is " + index + ",Previous index is " + indexCheck);
+        //console.log("[Correction loop]Count is: " + count + ", Index used is " + index + ",Previous index is " + indexCheck);
       }
 
       if (count % 2 == 0) {
@@ -217,7 +204,7 @@
           .duration('0.1s')
           .end();
 
-        console.log("[Even]Count is: " + count + ", Index used is " + index + ",Previous index is " + indexCheck);
+        //console.log("[Even]Count is: " + count + ", Index used is " + index + ",Previous index is " + indexCheck);
 
 
       } else {
@@ -236,7 +223,7 @@
     $scope.subBottle = function(index, quantity) {
       if (large[index] != 0 && quantity == 'l') {
         large[index] = large[index] - 1;
-        //console.log(large);
+        ////console.log(large);
         document.getElementById("numberInTheMiddlwOfTheBottleLarge" + index).innerHTML = large[index];
         if (large[index] > 99) {
           document.getElementById("numberInTheMiddlwOfTheBottleLarge" + index).style.fontSize = "10px";
@@ -261,7 +248,7 @@
     $scope.addBottle = function(index, quantity) {
       if (quantity == 's') {
         small[index] = small[index] + 1;
-        //console.log(small);
+        ////console.log(small);
         document.getElementById("numberInTheMiddlwOfTheBottleSmall" + index).innerHTML = small[index];
         if (small[index] > 99) {
           document.getElementById("numberInTheMiddlwOfTheBottleSmall" + index).style.fontSize = "10px";
@@ -272,7 +259,7 @@
         }
       } else {
         large[index] = large[index] + 1;
-        //console.log(large);
+        ////console.log(large);
         document.getElementById("numberInTheMiddlwOfTheBottleLarge" + index).innerHTML = large[index];
         if (large[index] > 99) {
           document.getElementById("numberInTheMiddlwOfTheBottleLarge" + index).style.fontSize = "10px";
@@ -311,6 +298,19 @@
         }
       }
 
+      for (var productsOrdered = 0; productsOrdered <= checkoutProducts.length - 1; productsOrdered++) {
+        productsForDB = productsForDB.concat("[");
+        productsForDB = productsForDB.concat(checkoutProducts[productsOrdered]);
+        productsForDB = productsForDB.concat(": S(");
+        productsForDB = productsForDB.concat(small[productsOrdered]);
+        productsForDB = productsForDB.concat(") L(");
+        productsForDB = productsForDB.concat(large[productsOrdered]);
+        productsForDB = productsForDB.concat(")]");
+        if (checkoutProducts.length > 1 && productsOrdered != checkoutProducts.length - 1) {
+          productsForDB = productsForDB.concat(",");
+        }
+      }
+
       for (var arrValue = 0; arrValue < small.length; arrValue++) {
         if (small[arrValue] != 0) {
           smallarray[arrValue] = small[arrValue];
@@ -321,12 +321,12 @@
       }
       checkoutProducts = checkoutProducts.filter(Boolean);
       priceList = priceList.filter(Boolean);
-      console.log("large: " + large);
-      console.log("smallarray: " + smallarray);
-      console.log("priceList: " + priceList);
-      console.log("checkoutProducts: " + checkoutProducts);
+      //console.log("large: " + large);
+      //console.log("smallarray: " + smallarray);
+      //console.log("priceList: " + priceList);
+      //console.log("checkoutProducts: " + checkoutProducts);
       $scope.records = checkoutProducts;
-      console.log(checkoutProducts);
+      //console.log(checkoutProducts);
       setTimeout(function() {
         for (var x = 0; x <= checkoutProducts.length - 1; x++) {
           document.getElementsByClassName('orderQuantity')[x].innerHTML = "(" + small[x] + "S" + large[x] + "L)";
@@ -335,31 +335,42 @@
       }, 10);
     }
 
-    $scope.products = ["Kitkat Milkshake","Oreo Milkshake","Tutty fruity"];
-    $scope.input = {'name':'Ankit','fields':{'name':'name'}};
+    $scope.prod = [];
+    $scope.input = {
+      'name': 'Kavintage',
+      'products': ''
+    };
+
 
     function getAllProducts() {
-      placeOrder.getProducts().then(function(results){
-        $scope.products= results.data.data;
-        console.log(products);
+      placeOrder.getProducts().then(function(results) {
+        $scope.products = results.data.data;
+        //console.log("----------[products]----------" + $scope.products);
+
       });
     }
     $scope.addproducts = function() {
-      placeOrder.addProducts($scope.input).then(function(results){
+      console.log(productsForDB);
+      $scope.input.products = productsForDB;
+      placeOrder.addProducts($scope.input).then(function(results) {
         $scope.input = {};
         getAllProducts();
       });
     }
-      getAllProducts();
+    getAllProducts();
   });
 
   example.service('placeOrder', function($http, Backand) {
     var service = this,
       baseUrl = '/1/objects/',
       objectName = 'items/';
+
     function getUrl() {
+      //console.log("+++++++++++++" + Backand.getApiUrl());
       return Backand.getApiUrl() + baseUrl + objectName;
+
     }
+
     function getUrlForId(itemId) {
       return getUrl(path) + itemId;
     }
@@ -368,7 +379,7 @@
       return $http.get(getUrl());
     };
     addProducts = function(productsPlaces) {
-      console.log(productsPlaces);
+      //console.log(productsPlaces);
       return $http.post(getUrl(), productsPlaces);
     };
     return {
