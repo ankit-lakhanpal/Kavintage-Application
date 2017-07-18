@@ -193,8 +193,6 @@
           .sub('margin-left', -movePosition)
           .duration('0.1s')
           .end();
-
-        //console.log("[Correction loop]Count is: " + count + ", Index used is " + index + ",Previous index is " + indexCheck);
       }
 
       if (count % 2 == 0) {

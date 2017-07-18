@@ -18,7 +18,7 @@
 }
 
 .color-red {
-  background: url(../img/addtext_com_MTAwMzQyMjIyNDA.jpg) no-repeat center center fixed;
+  background: url("http://del.h-cdn.co/assets/15/24/1600x800/gallery-1434133241-milkshakes.jpg");
   background-size: cover;
   width: 100%;
   max-width: 100%;
@@ -31,7 +31,7 @@
 }
 
 .color-yellow {
-  background-image: url("http://del.h-cdn.co/assets/15/24/1600x800/gallery-1434133241-milkshakes.jpg");
+  background-image: url(../img/addtext_com_MTAwMzQyMjIyNDA.jpg);
   background-size: cover;
   width: 100%;
   max-width: 100%;
@@ -195,9 +195,10 @@ h2assertive {
 }
 
 .productName {
+  color: red;
   /*font-style: italic;*/
   font-family: FontAwesome;
-  font-size: 20px;
+  font-size: 18px;
 }
 
 .list_border_mainmenu {
@@ -259,12 +260,14 @@ h2assertive {
   padding-left: 5px;
   font-size: 10px;
   opacity: 0.5;
+  color: red;
   display: inline-block;
 }
 
 .productAmountSmall {
   font-size: 10px;
   opacity: 0.5;
+  color: red;
   display: inline-block;
 }
 
@@ -294,18 +297,18 @@ width: calc(100vw - 20px);
 .bottleAndButtons {
   display: table;
   margin: 0 auto;
-  color: #fb4500;
+  color: #d40000;
 }
 
 .black {
-  background-color: #fb4500;
+  background-color: #d40000;
   color: white;
   font-size: 18px !important;
   font-family: 'fantacy';
 }
 
 .tabs-negetive>.tabs {
-  background-color: #fb4500;
+  background-color: #d40000;
   !important;
 }
 
@@ -317,11 +320,11 @@ width: calc(100vw - 20px);
   margin-top: -35px;
   margin-right: 1px;
   font-size: 16px;
-  color: #fb4500;
+  color: #d40000;
 }
 
 .starcolor {
-  color: #fb4500;
+  color: #d40000;
 }
 
 .card_menu_text {
@@ -329,9 +332,17 @@ width: calc(100vw - 20px);
   font-family: 'Rubik', sans-serif;
   color: black;
   /*text-align: center;*/
-  background-color: #ffedee !important;
+  background-color: rgba(18, 192, 228, 0.03) !important;
 }
 
 .orange {
   color: #f0632e;
+}
+
+.customRang{
+  background-color: rgba(138, 138, 138, 0.2);
+}
+
+ion-header-bar{
+  font-family: fantasy;
 }
