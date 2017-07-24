@@ -1,6 +1,8 @@
 <ion-pane ng-controller="ExampleController">
   <ion-tabs class="tabs-negetive tabs-icon-top tabs-color-active-custom">
     <ion-tab class="tabIcons1" title="Thick Shakes " icon-on="ion-beer" icon-off="ion-beer">
+      <ion-floating-button click="goToTab()" button-class="floatingButtonClass" bottom= "118px"  has-footer="false" backdrop="true" button-color="#d40000" icon="fa fa-cart-plus" icon-color="#fff">
+      </ion-floating-button>
       <ion-content>
         <ion-slide-box pager-click="navSlide(index)">
           <ion-slide>

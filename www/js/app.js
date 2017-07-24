@@ -33,7 +33,7 @@
   var large = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
   var productsForDB = "";
 
-  var example = angular.module('kavintage', ['ionic', 'kavintage.controllers', 'backand'])
+  var example = angular.module('kavintage', ['ionic', 'kavintage.controllers', 'backand','ion-floating-menu'])
     .run(function($ionicPlatform) {
       $ionicPlatform.ready(function() {
         if (window.cordova && window.cordova.plugins.Keyboard) {

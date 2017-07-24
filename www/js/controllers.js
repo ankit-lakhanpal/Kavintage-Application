@@ -1,4 +1,4 @@
-var example = angular.module('kavintage.controllers', [])
+var example = angular.module('kavintage.controllers',[])
 
 
 
